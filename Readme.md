@@ -7,6 +7,10 @@
 ### Pour essayer le code :
 
 ### Commande
+D'abord cloner le projet
+`git clone https://github.com/Ferdinaelectro1/def1.git`
+
+Créer le dossier de construction du projet
 `mkdir build`
 
 `cd build`
