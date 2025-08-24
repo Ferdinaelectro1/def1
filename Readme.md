@@ -11,16 +11,23 @@ D'abord cloner le projet
 `git clone https://github.com/Ferdinaelectro1/def1.git`
 
 Créer le dossier de construction du projet
+
 `mkdir build`
 
 `cd build`
+
+Création du fichier de stockage des données
+
+`touch products.dat`
 
 Génération des fichiers de construction du projet (ici le MakeFile)
 
 `cmake ..`
 
 Construction du projet avec make
+
 `make`
 
 Lancement ou exécution de l'application
+
 `./gest` 

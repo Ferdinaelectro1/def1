@@ -18,7 +18,7 @@ struct Produit
     unsigned int id;
     char name[75];
     unsigned int prix;
-    bool isAvailable;
+    unsigned int stock;
 };
 
 //Ensemble des produits du magasin
@@ -83,8 +83,8 @@ Produit get_product()
     std::cin >> p.name;
     std::cout << "Entrez prix : ";
     std::cin >> p.prix;
-    std::cout << "Entrez disponibilité : ";
-    std::cin >> p.isAvailable;
+    std::cout << "Entrez le stock actuel : ";
+    std::cin >> p.stock;
     return p;
 }
 
@@ -95,7 +95,7 @@ void list_product()
         std::cout << "Produit => "<<products[i].name <<std::endl;
         std::cout << "           Id => "<< products[i].id<<std::endl;
         std::cout << "           Prix => "<< products[i].prix<<std::endl;
-        std::cout << "           Disponible => "<<( products[i].isAvailable ? "OUI" : "NON") <<std::endl;
+        std::cout << "           Disponible => "<<products[i].stock <<std::endl;
     }
 }
 
@@ -123,7 +123,7 @@ std::vector<Produit> loadProducts()
     }
     size_t size = sizeof(current_product_read);
     std::cout << "passé"<< std::endl;
-    while (in.read(reinterpret_cast<char *>(&current_product_read),sizeof(current_product_read)))
+    while (in.read(reinterpret_cast<char *>(&current_product_read),size))
     {
         products.push_back(current_product_read);
     }
